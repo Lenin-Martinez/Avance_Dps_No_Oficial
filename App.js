@@ -5,36 +5,57 @@ import { NavigationContainer } from '@react-navigation/native';
 import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
 import { Value } from 'react-native-reanimated';
 
-function HomeScreen({ navigation }) {
+function Inicio({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button
-        onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
+        onPress={() => navigation.navigate('Pagina2')}
+        title="Go to Page 2"
       />
     </View>
   );
 }
 
-function NotificationsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
-function PokemonScreen({ navigation }){
+function Pagina2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('Inicio')}
         title="Go to home"
       />
     </View>
   );
 }
-
+function Pagina3({ navigation }){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('Inicio')}
+        title="Go to home"
+      />
+    </View>
+  );
+}
+function Pagina4({ navigation }){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('Inicio')}
+        title="Go to home"
+      />
+    </View>
+  );
+}
+function Pagina5({ navigation }){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        onPress={() => navigation.navigate('Inicio')}
+        title="Go to home"
+      />
+    </View>
+  );
+}
 
 
 
@@ -53,9 +74,7 @@ export default function App() {
   return (
       <NavigationContainer>
 
-
         <View style={styles.BannerSup}>
-
           <View style={styles.BannerImageSpc}>
             <Image 
                 source={require('./assets/img/LogoFF.png')}
@@ -85,10 +104,12 @@ export default function App() {
 
 
 
-        <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-          <Drawer.Screen name="Lista" component={PokemonScreen}/>
+        <Drawer.Navigator initialRouteName="Inicio"> 
+          <Drawer.Screen name="Inicio" component={Inicio} />
+          <Drawer.Screen name="Pagina2" component={Pagina2} />
+          <Drawer.Screen name="Pagina3" component={Pagina3}/>
+          <Drawer.Screen name="Pagina4" component={Pagina4}/>
+          <Drawer.Screen name="Pagina5" component={Pagina5}/>
         </Drawer.Navigator>
       </NavigationContainer>
   );
